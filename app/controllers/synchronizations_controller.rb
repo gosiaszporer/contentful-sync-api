@@ -1,46 +1,29 @@
 # frozen_string_literal: true
 
 require 'contentful'
-require 'uri'
 
 class SynchronizationsController < ApplicationController
   def download
-    if Product.first
-      return render json: { message: "Initial download alredy happened" },
+    if existing_record
+      return render json: { message: 'Initial download alredy happened' },
                     status: :unprocessable_entity
     end
 
-    sync = client.sync(initial: true)
-    items = []
-    sync.each_item do |item|
-      items << item.raw
-    end
-
-    items = items.sort_by { |item| item['sys']['createdAt'] }
-
-    Product.create(sys: { "type": 'Array' }, #sorry!
-                  items: items, 
-                  nextSyncUrl: next_sync(sync.next_sync_url))
+    DownloadItems.new(client).call
   end
 
   def sync
-    if Product.first.nil?
+    if existing_record.nil?
       return render json: { message: "You can't synchronize without initial download" },
                     status: :unprocessable_entity
     end
 
-    sync = client.sync(sync_token: Product.first.nextSyncUrl)
-    items = Product.first.items
-    sync.each_item do |item|
-      items << item.raw
-    end
-
-    Product.update(items: items, nextSyncUrl: next_sync(sync.next_sync_url))
+    SyncItems.new(client).call
   end
 
   def reset
     Product.destroy_all
-    download
+    DownloadItems.new(client).call
   end
 
   private
@@ -54,9 +37,7 @@ class SynchronizationsController < ApplicationController
     )
   end
 
-  def next_sync(url)
-    uri = URI.parse(url)
-    params = CGI.parse(uri.query)
-    params['sync_token'].first
+  def existing_record
+    Product.first
   end
 end
