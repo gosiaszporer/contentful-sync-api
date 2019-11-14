@@ -1,0 +1,13 @@
+{
+  "published": true,
+  "name": "Initial Synchronization",
+  "end_point": "synchronizations/download",
+  "http_method": "GET",
+  "params": [],
+  "header": {
+    "Content-Type": "application/json"
+  },
+  "examples": [{
+    "response": {}
+  }]
+}

@@ -1,0 +1,13 @@
+{
+  "published": true,
+  "name": "Secondary Synchronization",
+  "end_point": "synchronizations/sync",
+  "http_method": "GET",
+  "params": [],
+  "header": {
+    "Content-Type": "application/json"
+  },
+  "examples": [{
+    "response": {}
+  }]
+}

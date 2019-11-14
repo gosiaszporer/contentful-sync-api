@@ -1,0 +1,13 @@
+{
+  "published": true,
+  "name": "Reset Synchronization",
+  "end_point": "synchronizations/reset",
+  "http_method": "GET",
+  "params": [],
+  "header": {
+    "Content-Type": "application/json"
+  },
+  "examples": [{
+    "response": {}
+  }]
+}

@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   get 'synchronizations/sync' => 'synchronizations#sync'
   get 'synchronizations/reset' => 'synchronizations#reset'
   get 'products/index' => 'products#index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  mount Apidoco::Engine, at: "/docs"
 end

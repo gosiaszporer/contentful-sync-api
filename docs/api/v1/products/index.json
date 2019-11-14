@@ -1,0 +1,60 @@
+{
+  "published": true,
+  "name": "Index Products",
+  "end_point": "products/index",
+  "http_method": "GET",
+  "params": [],
+  "header": {
+    "Content-Type": "application/json"
+  },
+  "examples": [{
+    "response": { 
+      "sys": {
+        "type": "Array"
+      },
+      "items": [
+        {
+          "sys": {
+            "space": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Space",
+                "id": "inuxiom9wh7d"
+              }
+            },
+            "id": "2WGCLqJK6fhpZ5R8nsCNcN",
+            "type": "Entry",
+            "createdAt": "2019-11-11T13:50:03.190Z",
+            "updatedAt": "2019-11-11T13:50:03.190Z",
+            "environment": {
+              "sys": {
+                "id": "master",
+                "type": "Link",
+                "linkType": "Environment"
+              }
+            },
+            "revision": 1,
+            "contentType": {
+              "sys": {
+                "type": "Link",
+                "linkType": "ContentType",
+                "id": "product"
+              }
+            }
+          },
+          "fields": {
+            "name": {
+              "en-US": "V60 Drip"
+            },
+            "quantity": {
+              "en-US": 50
+            },
+            "price": {
+              "en-US": 22
+            }
+          }
+        }
+      ]
+    }
+  }]
+}
