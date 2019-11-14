@@ -14,7 +14,7 @@ rspec
 rails s
 ```
 ## Documentation
-Documentation available at
+Documentation is available at
 ```
 \docs
 ```
