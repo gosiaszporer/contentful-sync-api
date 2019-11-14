@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'Products API', type: :request do
@@ -6,7 +8,7 @@ RSpec.describe 'Products API', type: :request do
   describe 'GET /products/index' do
     before do
       product
-      get "/products/index"
+      get '/products/index'
     end
 
     it 'returns products' do
@@ -14,7 +16,7 @@ RSpec.describe 'Products API', type: :request do
     end
 
     it 'returns correct keys' do
-      expect(json.keys).to eq(["items", "sys"])
+      expect(json.keys).to eq(%w[items sys])
     end
 
     it 'returns status code 200' do
