@@ -1,24 +1,20 @@
-# README
+# Contentful recruitment task - Synchronization Api for offline agents
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Setup
+1. Install gems:
+```
+bundle install
+```
+2. Make sure all specs pass:
+```
+rspec
+```
+3. Start server
+```
+rails s
+```
+## Documentation
+Documentation available at
+```
+\docs
+```
