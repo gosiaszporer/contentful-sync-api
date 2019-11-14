@@ -20,10 +20,12 @@ Documentation is available at
 ```
 ## My approach
 I used noSQL database mongoDB to create Product with one record that contains all items as objects. I created four requests:
-1. For Initial synchronization
+1. For initial synchronization
 2. For secondary synchronization
 3. To reset all data
 4. To list all product's items
+
 I used rubocop to make sure that the code meets acceptable standards.
+
 
 Looking forward to get some feedback! 😃
